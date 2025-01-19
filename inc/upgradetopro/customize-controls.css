@@ -1,0 +1,179 @@
+#customize-controls .control-section-bizplus .accordion-section-title:hover,
+
+#customize-controls .control-section-bizplus .accordion-section-title:focus {
+
+    background: #fff;
+
+}
+
+
+
+.rtl .control-section-bizplus .accordion-section-title .cusbtn {
+
+    margin-left: 0;
+
+    margin-right: 8px;
+
+}
+
+
+
+.accordion-section-title .cusbtn {
+
+    text-align: center;
+
+    padding-left: 30px;
+
+    padding-right: 30px;
+
+    margin-top: 8px;
+
+}
+
+
+
+a.button.cusbtn,
+
+a.button.cusbtn:visited {
+
+    background: linear-gradient(45deg,#5cc3ee 0,#5d91ef 29%,#5e5ef0 50%,#947be1 73%,#ca97d2 100%);
+
+    border-color: linear-gradient(45deg,#5cc3ee 0,#5d91ef 29%,#5e5ef0 50%,#947be1 73%,#ca97d2 100%);
+
+    color: #fff;
+
+    box-shadow: none;
+
+    line-height: 0;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    padding: 15px 20px;
+
+    vertical-align: middle;
+
+    display: block;
+
+    text-align: center;
+
+    clear: both;
+
+    margin-bottom: 7px;
+
+    border-radius: 3px;
+
+    outline: none;
+
+    -webkit-transition: all 0.5s ease-in-out;
+
+    -moz-transition: all 0.5s ease-in-out;
+
+    -o-transition: all 0.5s ease-in-out;
+
+    transition: all 0.5s ease-in-out;
+
+}
+
+
+
+a.button.cusbtn:hover {
+
+    background: #191e23;
+
+    color: #fff;
+
+}
+
+
+
+p.one-click-demo-import {
+
+    background: #fff;
+
+    padding: 10px;
+
+    font-size: 16px;
+
+}
+
+
+
+li#accordion-section-theme_info>h3, li#accordion-panel-tech-blogging>h3 {
+
+    background: #fff !important;
+
+    font-size: 14px!important;
+
+}
+
+
+
+.pro-features {
+
+  background: #fff;
+
+  padding: 15px;
+
+}
+
+.pro-features ul {
+
+    list-style: disc;
+
+}
+
+
+
+.pro-features ul li:first-child {
+
+    margin-top: 0;
+
+}
+
+
+
+.pro-features ul li:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+
+.pro-features ul li {
+
+    font-size: 16px;
+
+    font-style: normal;
+
+}
+
+
+
+.pro-features ul li a {
+
+    font-weight: 700;
+
+    font-size: 16px;
+
+}
+
+
+
+.customize-control.customize-control-sepearetor {
+
+    color: #000;
+
+}
+
+
+
+.pro-features ul li {
+
+    margin-left: 20px;
+
+    font-size: 18px;
+
+}
