@@ -32,6 +32,19 @@
 
 				</div>
 			</div>
+			<div class="col-md-3 align-self-center">
+				<ul class="lang-list">
+				<?php
+					if (function_exists('pll_the_languages')) {
+						pll_the_languages([
+							'show_flags' => 1,
+							'show_names' => 0,
+						]);
+					}
+					
+				?>
+				</ul>
+			</div>
 			<?php if (null != tech_blogging_social_activity()) : ?>
 			<div class="col-md-3 align-self-center">
 				<div class="social-link-top">
