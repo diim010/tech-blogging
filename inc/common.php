@@ -97,3 +97,85 @@ function add_language_switcher() {
     }
 }
 add_action('tech_blogging_header', 'add_language_switcher');
+
+
+function display_reviews_posts_list() {
+    // Define a query to fetch Reviews posts
+    $reviews_query = new WP_Query([
+        'post_type'      => 'reviews', // Your custom post type
+        'posts_per_page' => 5,         // Number of posts to display
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    ]);
+
+    // Check if there are any Reviews posts
+    if ($reviews_query->have_posts()) {
+        echo sprintf(pll__('Best SASS software of %s year'), date('Y'));
+
+
+        echo '<h2>' . __('Latest Reviews', 'textdomain') . '</h2>'; // Section title
+
+        echo '<div class="reviews-posts__list">';
+
+        // Loop through the Reviews posts
+        while ($reviews_query->have_posts()) {
+            $reviews_query->the_post();
+
+            // Get custom fields
+            $logo = get_field('logo'); // Image URL or array
+            $bonus = get_field('bonus');
+            $link = get_field('link'); // URL
+
+            echo '<div class="reviews-post__block">';
+
+            // Safely display the logo
+            if (!empty($logo)) {
+                echo '<img src="' . esc_url($logo['url']) . '" alt="' . esc_attr(get_the_title()) . '" class="review-logo">';
+            }
+            $src =  get_the_permalink();
+            echo '<a href="' . $src . '" class="reviews-post__src"><h3 class="reviews-post__title">' . get_the_title() . '</h3></a>';;
+
+            if (!empty($bonus)) {
+                echo '<p class="review-bonus">' . esc_html($bonus) . '</p>'; // Bonus text
+            }
+        
+            // Safely display the "Try it now!" link
+            if (!empty($link) && is_string($link)) {
+                echo '<a href="' . esc_url($link) . '" class="review-link">' . __('Try it now!', 'textdomain') . '</a>';
+            } ?>
+            <?php $features = get_field( 'features' ); ?>
+							
+							<?php if ($features): ?>
+							<div class="features">
+								<h2><?php _e('Features', 'tech-blogging'); ?></h2>
+								<ul>
+									<?php
+									$features_array = array_map('trim', explode(',', $features));
+									foreach ($features_array as $feature) {
+										echo '<li>' . esc_html($feature) . '</li>';
+									}
+									?>
+								</ul>
+							</div>
+							<?php endif; ?>
+                            <?php
+            echo '</div>'; // Close review-item
+        }
+
+        echo '</div>'; // Close reviews-posts-list
+
+        // Restore global post data
+        wp_reset_postdata();
+    } else {
+        echo '<p>' . __('No reviews found.', 'textdomain') . '</p>';
+    }
+}
+
+
+add_action('tech_blogging_before_default_page', 'display_reviews_posts_list');
+
+// Polylang strings
+function my_theme_register_dynamic_strings() {
+    pll_register_string('best_sass_software', 'Best SASS software of %s year', 'My Theme');
+}
+add_action('init', 'my_theme_register_dynamic_strings');

@@ -21,6 +21,7 @@ if (true === $show_hide_banner_section) {
 ?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
+	
 	<?php
 	do_action( 'tech_blogging_before_default_page' );
 	if ( have_posts() ) :
